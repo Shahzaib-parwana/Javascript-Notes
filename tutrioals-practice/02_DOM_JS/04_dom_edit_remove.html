@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove by dom</title>
+
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <ul class="language">
+        <li>Java script</li>
+    </ul>
+    <script>
+        // ~~~~~~~~~~~~~~~~~~~~~~~ADD ELEMENT```````````````````
+        // ```````````THIS WORK BUT NOT OPTMIZING METHOD````````````
+       const addElement = (item)=>{
+        const li= document.createElement('li')
+        li.textContent=`${item}`
+        document.querySelector('.language').appendChild(li)
+       } 
+       addElement('pythhon')
+       addElement('ruby')
+       addElement('html')
+
+       //-------------OPTIMIZE WAY--------------
+        const optWayAdd = (element)=>{
+            const li = document.createElement('li')
+            let textNode = document.createTextNode(element)
+            li.appendChild(textNode)
+            document.querySelector(`.language`).appendChild(li)
+
+        }
+        optWayAdd('java')
+        optWayAdd('shahzib-parwana')
+//install tabnine
+// ~~~~~~~~~~~~~~~~~~~~~~EDIT ELEMENT~~~~~~~~~~~~~~~~~~~
+//1st method(not optimizing way)
+const editElement = document.querySelector('li:nth-child(2)')
+editElement.innerHTML = 'pykhan'
+//2nd method (optimize way)
+
+let newli = document.createElement("li")
+newli.textContent='khan804'
+editElement.replaceWith(newli)
+//~~~~~~~~~~~~~~~~~~~~~~~remove element~~~~~~~~~~~~~~~~~
+const removeElement = document.querySelector('li:last-child')
+removeElement.remove()
+
+
+    </script>
+</body>
+</html>

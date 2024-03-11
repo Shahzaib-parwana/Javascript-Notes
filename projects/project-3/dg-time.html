@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital time plate</title>
+
+</head>
+<style>
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        background-color: #212121;
+        color: #fff;
+    }
+    #time{
+        font-size: 40px;
+        background-color: rgb(48, 32, 4);
+        padding: 20px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+</style>
+<body>
+   <div class="center">
+    <div id="banner">
+        <span>your local time</span>
+    </div>
+    <div id="time"></div>
+
+   </div> 
+   <script>
+    const clock = document.getElementById('time')
+    // ya method jitna time hum dinga us haiab sa run kra ga (chronjob fo server purpes)
+    let intervel = 1000;
+    setInterval(()=>{
+        let time = new Date();
+        clock.innerHTML = time.toLocaleTimeString()
+    },intervel)
+   </script>
+</body>
+</html>

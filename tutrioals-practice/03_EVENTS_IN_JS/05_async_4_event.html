@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keybord key Press Check</title>
+</head>
+<style>
+    body{
+        background-color: #212121;
+        color: #fff;
+        height: 100vh;
+    }
+    table,th,td{
+        border: 2px solid #fff;
+    }
+    .project{
+        height: 100vh;
+        background-color: #1c1c1c;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+    }
+    .color{
+        color: aliceblue;
+        display: flex;
+        flex-direction: row;
+    }
+    .insert{
+        height: 100vh;
+
+    }
+</style>
+<body>
+    <!-- ```````````project``````````` -->
+    <div class="project">
+        <div id="insert">
+            <div class="key">press the key and see which key is pressed</div>
+        </div>
+    </div>
+</body>
+<script>
+    const insert = document.querySelector('#insert')
+
+    window.addEventListener('keydown',(e)=>{
+        insert.innerHTML = `
+        <div class='color'>
+            <table>
+                <tr>
+                    <th>key<th>
+                    <th>keycode<th>
+                    <th>code<th>
+                 <tr>   
+                <tr>
+                    <td>${e.key===" " ? "Space" :e.key}<td>
+                    <td>${e.keyCode}<td>
+                    <td>${e.code}<td>
+                 <tr>   
+            </table>
+        </div>
+        `
+    })
+</script>
+</html>

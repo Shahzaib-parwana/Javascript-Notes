@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in Javascript</title>
+</head>
+<style>
+    #images li img{
+        width: 140px;
+    }
+</style>
+<body style="background-color: #212121;color: #fff;">
+    <ul id="images">
+        <li><img src="img/neting1.jpg" alt="image" id="img1"></li>
+        <li><img src="img/neting2.jpg" alt="image" id="img2"></li>
+        <li><img src="img/neting3.png" alt="image" id="img3"></li>
+        <li><img src="img/neting4.webp" alt="image" id="img4"></li>
+        <li><img src="img/neting5.png" alt="image" id="img5"></li>
+        <li><img src="img/neting6.PNG" alt="image" id="img6"></li>
+        <li><a id="google" href="https://google.com">Google</a></li>
+    </ul>   
+</body>
+<script>
+    // `````````````````TOPICS TO SEARCH```````````````````
+    // 1.attached
+    // 2.jqueary
+    // 3.types => keyboard events ,mouse events , click events
+    // 4. time stamps=> time activetys date activetyes
+    // 5.preventdefault=> use to stop default actions
+    // 6.target
+    // 7.toElement
+    // 8.srcElements
+    // 9.currentTarget
+    // 10.clientX,clientY,screenX,screenY
+    // 11.altkey,cntrlkey,shftkey,keycode
+
+
+    // document.getElementById('img2').onclick = function(){
+    //     alert('img2 clicked')
+    // }
+    // ```````````````````````````3rd method 
+// ****************event ma bohat se pr functionalities huma milti hain jasa drag and drop click ,key board events, or ya bohat powerful hota ha 
+// document.getElementById('img3').addEventListener('click',function(){
+//     alert('Image no 3is clicked')
+// })
+// ***************EVENT OBJECTS
+// document.getElementById('img3').addEventListener('click',function(e){
+//     alert('Image no 3is clicked')
+// },false)
+// ***************EVENT PROPGATION *****************
+// bubbling and capturing 
+//capturing(true):=>top sa bottem ki taref jata ha means parent sa chiled wale ki taraf jata ha
+//capturing(true):=>phla parent wala(ul) excute hoge fir chiled(li) jo b condation lagi hogi
+
+//bubbling(false):=>bottom sa top ki tarf jata ha yani child sa parent ki tarf
+
+
+// document.getElementById('images').addEventListener('click',function(e){
+//     alert('Image no ul is clicked')
+// },false)
+// document.getElementById('img3').addEventListener('click',function(e){
+//     alert('Image no 3 is clicked')
+//     e.stopPropagation() //stop the bubbling propgation( only)
+// },false)
+// document.getElementById('google').addEventListener('click',function(e){
+//     e.preventDefault();// it is used to stop default behaviour of any thing
+// },false)
+
+
+// ```````````````````SMALL PROJECT PRACTICE```````````````````````
+//jase he hum kisi image pr click kra to wo image remove ho jaya 
+document.querySelector('#images').addEventListener('click',function(e){
+    if(e.target.tagName ==='IMG'){
+
+        let removeIt = e.target.parentNode //image ka parent node list item ha is code sa wo remove ho jaya ga 
+        removeIt.remove()
+    }
+},false)
+
+</script>
+</html>

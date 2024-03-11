@@ -1,0 +1,80 @@
+<!-- DOM SELECTOR ,NODELIST AND HTML COLLECTION -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom |tut</title>
+</head>
+<style>
+    .bg-body{
+        background-color: #212121;
+        color: #fff;
+    }
+</style>
+<body class="bg-body">
+    <div class="title">
+        <h1 id="title" class="heading"> Hello shahzaib how are you</h1>
+        <h2>Lorem ipsum dolor sit amet.1</h2>
+        <h2>Lorem ipsum dolor sit amet.2</h2>
+        <h2>Lorem ipsum dolor sit amet.3</h2>
+        <ul id="ul">
+            <li class="class1">two</li>
+            <li class="class1">one</li>
+            <li class="class1">three</li>
+        </ul>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+    </div>
+    <script>
+        // ````````````````````````for web base investigating````````````````
+        // ``````````````````````attribute selector``````````````````
+        // document.getElementById( 'title').id //id pata krna k lia
+        // document.getElementById( 'title').className //class pata krna k lia
+        // document.getElementById( 'title').getAttribute('class') 
+        // document.getElementById( 'title').setAttribute('class','test') // is ma 2 parameters hota hain phala class jo ki class ko select kra ga or dosra us ka nam rakhnna k lia.
+        // document.getElementById( 'title').setAttribute('class','test','heading') // ager nya class set krna ha to is teaah krta hain
+        // ``````````````````````````contant mining/contant kasa nikalta hain````````````````````````
+        // title.textContent //serf tag k ander sa contant ko nikalta ha 
+         // title.innerHTML  // kisi tage k ander koi dosra tag laga hua ho to wo b nikalta ha  
+         // title.innerText //ya kisi tag pr display none lagi hui hi to usa b nikalta ha
+
+        const title =  document.getElementById( 'title')
+        const title2 =  document.getElementsByClassName( 'title')
+        title.style.backgroundColor = 'green'
+        title.style.padding = '20px'
+        title.style.borderRadius= '20px'
+
+        //qurery selectorsssss
+        // document.querySelector('h2')// it gives only frist h2
+        // document.querySelector('#tittle')// it is used for id selector
+        // document.querySelector('.heading')// it isused for select class
+        // document.querySelector('input')    // it is for directly  tag selection
+        // document.querySelector('input[type="passward"]')    // it for select tage and attribute
+        // document.querySelector('p:chiled-frist')    // so we can select multple attribute like this(img ,a,etc)
+
+
+        // const myul = document.querySelector('#ul')    // so we can select multple attribute like this(img ,a,etc)
+        // const bg = myul.querySelector('#li')
+        // // bg.style.backgroundColor = "green"
+        // bg.innerText = "five"
+
+        //in arry we can not directly apply these propertyes so we use indexing[]
+        //queryselectorall ma huma page ki sare tages milta hain is lia huma batana hota ha ki hum  kis pr koi b property lagana chata hain
+
+        const templilist = document.querySelectorAll("li")
+        // templilist[0].style.color='red'
+        templilist.forEach(function(item){
+            item.style.color = 'red'
+        })
+
+        const tempclass = document.getElementsByClassName('class1')
+        const tempclass2 =Array.from(tempclass)
+        tempclass2.forEach(function (item){
+            item.style.backgroundColor = 'green'
+        })
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusse the number Game</title>
+</head>
+<style>
+    .container{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .guess{
+        height: 30px;
+        border: 2px solid gray;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    #btn{
+        display: block;
+        margin: auto;
+        background-color: #5f5c5c;
+        color: #fff;
+    }
+    #btn:hover{
+        background-color: #c7b0b0;
+        color: black;
+        font-size: 14px;
+    }
+</style>
+<body style="background-color: #212121;color: #fff;">
+    <div class="container">
+        <h1>Number Gussing Game</h1>
+        <p>try and guess a rendom number betwween 1 100</p>
+        <p>you have 10 attempts to guss the right number</p><br>
+        <form>
+            <h2>Guess the number</h2>
+            <input type="text" id="guess" class="guess"><br>
+            <input type="submit" id="btn" value="Submit" class="guess">
+        </form>
+        <div class="result">
+            <p>Previous Guess: <span class="guesses"></span></p>
+            <p>Remaning Guess: <span class="lastResult">10</span></p>
+        </div>
+    </div>
+    <script src="guess.js"></script>
+</body>
+</html>

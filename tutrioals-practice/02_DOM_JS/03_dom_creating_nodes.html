@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creating new nodes</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <script>
+        //CREATING NEW ELEMENT DIRECTLY THROUGH JS
+        const newElement = document.createElement("div") // we can creat new element by using this 
+        newElement.className = "main" //we can set class name by this
+        newElement.id =Math.round( Math.random()*10 +1) //we can creat id using math function
+//we can use setattribute function to set a attributes of any tage it take two argu key and value i.e 
+        newElement.setAttribute('type','passward')  
+        newElement.style.backgroundColor = 'green'
+        newElement.style.padding = '30px'
+        //```````````this work but not optimize approch```````
+        // newElement.innerHTML= 'shahzib parwana '
+        //````````OPTIMIZE APPROCH`````````
+        //in this approch we can set value without geeting refrence frist (which are done by innerHTML property) 
+        const node = document.createTextNode('shahzaib parwana')
+        newElement.appendChild(node) // it is used to add child in div
+        document.body.appendChild(newElement);
+
+
+
+
+    </script>
+</body>
+</html>

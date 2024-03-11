@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theam chahnger</title>
+</head>
+<style>
+    .nav{
+        background-color: rgba(128, 128, 128, 0.473);
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+
+    }
+    .btn{
+        
+        margin: 20px;
+        padding: 12px;
+        border-radius: 10px;
+
+    }
+   
+    .btn-1{
+       
+        align-items: end;
+    }
+    .box{
+        float: left;
+       height: 50px;
+       width: 50px;
+       border: 2px solid black;
+       margin-left: 6px; 
+       flex-wrap: wrap;
+      
+    }
+    #gray{
+        background-color: gray;
+    }
+    #blue{
+        background-color: blue;
+    }
+    #green{
+        background-color: green;
+    }
+    #red{
+        background-color: red;
+    }
+    #yellow{
+        background-color: yellow;
+    }
+
+</style>
+<body>
+    <nav class="nav">
+        <button class="btn" type="button" ><a href="/">Home</a></button>
+        <button class="btn btn-1" type="button"><a href="/">service</a></button>
+    </nav>
+<div class="box" id="gray"></div>
+<div class="box" id="red"></div>
+<div class="box" id="blue"></div>
+<div class="box" id="green"></div>
+<div class="box" id="yellow"></div>
+<script src="theam_chahnger.js"></script>
+</body>
+</html>

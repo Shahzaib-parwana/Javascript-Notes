@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body>
+    <button id="orange">blue</button>
+    <button id="purple">purple</button>
+</body>
+<script>
+    //laxcial scope:=>ma function scoping k bara ma bata hain ki elements kha pr accesable hain 
+    //closure:=> ma fuction k ander function return ko return krta hain or wo jab call hota hai to parent function k elements(veriable,argu) ko b access kr sakta ha
+    //example
+    function clickHandler(color){
+       return function(){
+        document.body.style.backgroundColor = color;
+        }
+    }
+    document.getElementById("orange").onclick = clickHandler('orange')
+    document.getElementById("purple").onclick = clickHandler('purple')
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!-- //new Element creating -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new obj creating</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wedneday</div>
+        <div class="day">thrusday</div>
+        <div class="day">friday</div>
+    </div>
+    <script>
+        // ```````````````````parent to chiled && child to parent````````````````````
+       const parent = document.querySelector(".parent")
+    //    for (let index = 0; index < parent.clildren.length; index++) {
+    // //   const element = array[index];
+    //    const element = parent.children[index]
+    // //    element.style.color = 'red'
+    //    }
+
+    // we can go parent to child from this method
+    // console.log(parent.firstElementChild) //used to access frist child of parent
+    // console.log(parent.lastElementChild) //used to access last child of parent
+
+    //we can also go from child to parent i.e
+//    const dayone = document.querySelector(`.day`)
+//    console.log( dayone.parentElement) //this give us the parent element without triverse all tree
+//    console.log( dayone.nextElementSibling) //this give us the sibling of frist element without triverse all tree
+
+        //NODES IN HTML   
+    console.log("NODES:",parent.childNodes); //it will show all the nodes which ure used in html structring
+
+    </script>
+</body>
+</html>

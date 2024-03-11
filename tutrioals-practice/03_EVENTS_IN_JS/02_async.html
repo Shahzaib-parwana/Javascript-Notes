@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asyncronous in jjs</title>
+</head>
+<body>
+    <h1>Async in JS || Events</h1>
+    <button id="btn">Stop</button>
+</body>
+<script>
+    setTimeout(function(){ // it  excute in given time only once
+        // alert('hello shahzaib ')
+    },4000)
+
+//WE CAN ALSO GIVE REFRENCE OF OF FUNCTION IN SETTIOMEOUT FUNCTION FOR EXCUTION OF CODE
+ const shahzaib = function(){ 
+        // alert('[hello shahzaib] ')
+    }
+    setTimeout(shahzaib,1000) //here we give refrence of function not call the function
+
+//```````````````CHANGE H1 AFTER 4 SECOND``````````````
+
+const changeText = function(){
+    document.querySelector('h1').innerHTML = 'Async in events'
+}
+const changeTime = setTimeout(changeText,4000)
+
+//````````````stop settime function````````````
+document.querySelector('#btn').addEventListener('click',function(){
+    clearTimeout(changeTime);
+})
+</script>
+</html>

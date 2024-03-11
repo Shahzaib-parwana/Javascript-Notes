@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asyncronous in js</title>
+</head>
+<body>
+    <h1>Async in JS || Events Part II</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    //`````````````project task ```````````
+    let intervel
+    const starTime = function(){
+        function time(){
+            console.log('Time is: ',Date.now())
+        }
+        intervel = setInterval(time,1000)
+    }
+    const stopTime = function(){
+        clearInterval(intervel)
+    }
+    document.querySelector('#start').addEventListener('click',starTime)
+    document.querySelector('#stop').addEventListener('click',stopTime)
+</script>
+</html>

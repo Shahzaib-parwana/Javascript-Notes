@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyncronous in js</title>
+</head>
+<body>
+    <h1>Async in JS || Events Part III</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    //`````````````project task ```````````
+    //genrate a random color
+    let changer;
+    const randomColor = function(){
+        const hex = '0123456789ABCDEF'
+        let color = '#'
+        for(let i = 0;i<6;i++){
+            color +=hex[Math.floor(Math.random()*16)];
+        }
+        return color;
+    }
+ function starClor(){
+    function changeColor(){
+       
+        document.body.style.backgroundColor = randomColor();
+    }
+    if(!changer){
+        changer = setInterval(changeColor,500)
+    }
+ }
+ function stopColor(){
+    clearInterval(changer);
+    changer = null; //this is for memory management purpose
+ }
+
+    document.querySelector('#start').addEventListener('click',starClor)
+    document.querySelector('#stop').addEventListener('click',stopColor)
+
+
+
+
+
+
+</script>
+</html>
